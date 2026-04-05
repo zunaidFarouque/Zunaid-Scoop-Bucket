@@ -4,6 +4,15 @@
 
 Personal [Scoop](https://scoop.sh) bucket: custom app manifests that are not (or not yet) in the default buckets.
 
+## Publishing (first time on GitHub)
+
+1. Create a **public** repository named `Zunaid-Scoop-Bucket` on GitHub under account **`Zunaid`** (or change the remote and replace `Zunaid` everywhere below with your owner name).
+2. From this directory run: `git push -u origin main`
+3. In the repo **Settings → Actions**, enable permissions as described in [GitHub Actions](#github-actions-required-once-per-repo) below.
+4. Open the **CI** workflow run on `main` and confirm it succeeds.
+
+If your GitHub username is not `Zunaid`, run `git remote set-url origin https://github.com/<you>/Zunaid-Scoop-Bucket.git` and update the badge URLs in this file, [`bin/auto-pr.ps1`](bin/auto-pr.ps1), and [`AGENTS.md`](AGENTS.md).
+
 ## Install
 
 ```pwsh
