@@ -34,14 +34,14 @@ Keep JSON **valid**: no comments except the `"##"` template note (remove that ke
 
 1. Install [Scoop](https://scoop.sh) on Windows.
 2. **Option A — path install:** `scoop install path\to\bucket\app.json` (use the path to the manifest under this repo).
-3. **Option B — bucket install:** `scoop bucket add zunaid-scoop-bucket <repo-url>` then `scoop install zunaid-scoop-bucket/app`.
+3. **Option B — bucket install:** `scoop bucket add zunaid-scoop-bucket https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket` then `scoop install zunaid-scoop-bucket/<app>`.
 4. **Automated tests (same as CI):** Clone [ScoopInstaller/Scoop](https://github.com/ScoopInstaller/Scoop), set `$env:SCOOP_HOME` to that directory, then run [`bin/test.ps1`](bin/test.ps1) from the bucket root. GitHub Actions runs this under Windows PowerShell and **pwsh** (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 Fix any **Pester** / manifest lint failures before pushing.
 
 ## Repo-specific configuration
 
-- **Git remote:** `https://github.com/Zunaid/Zunaid-Scoop-Bucket.git` — if the GitHub owner or repo name changes, update [`README.md`](README.md) badges and install commands, and [`bin/auto-pr.ps1`](bin/auto-pr.ps1) (`$upstream = "Owner/Repo:main"`).
+- **Git remote:** `https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket.git` — if the GitHub owner or repo name changes, update [`README.md`](README.md) badges and install commands, and [`bin/auto-pr.ps1`](bin/auto-pr.ps1) (`$upstream = "Owner/Repo:main"`).
 - **Bucket short name in docs:** `zunaid-scoop-bucket` (the name users pass to `scoop bucket add`). If you rename it, update **README.md** and examples here.
 
 ## Pull request hygiene
