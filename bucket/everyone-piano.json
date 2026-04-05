@@ -1,0 +1,20 @@
+{
+    "version": "2.5.9.4",
+    "description": "Virtual piano keyboard and play piano on computer keyboard (Everyone Piano).",
+    "homepage": "https://www.everyonepiano.com/",
+    "license": "Freeware",
+    "innosetup": true,
+    "architecture": {
+        "64bit": {
+            "url": "https://www.everyonepiano.com/Software/down/1/1#/EveryonePiano-Setup.exe",
+            "hash": "ad64cbec54e6cf1792fce3d2e9873984f3dcfa57e1b496280c8fd9fe4449cf9b"
+        }
+    },
+    "bin": "EveryonePiano.exe",
+    "shortcuts": [
+        [
+            "EveryonePiano.exe",
+            "Everyone Piano"
+        ]
+    ]
+}
