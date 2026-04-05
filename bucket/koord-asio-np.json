@@ -4,8 +4,8 @@
     "homepage": "https://github.com/kormix-io/KoordASIO",
     "license": "MIT",
     "notes": [
-        "Package name ends with -np (non-portable): Scoop only automates the official installer. Files live under %ProgramFiles%\\KoordASIO, not under the Scoop app directory.",
-        "Prefer installing from an elevated PowerShell if UAC/setup fails. Uninstall removes the driver via the vendor uninstaller in that folder."
+        "Package name ends with -np (non-portable): Scoop only downloads and runs the official installer. The app, driver, and Start Menu shortcuts are entirely the vendor’s; there are no Scoop shims.",
+        "Prefer an elevated PowerShell if UAC/setup fails. `scoop uninstall` runs the vendor uninstaller under %ProgramFiles%\\KoordASIO so Scoop can drop its install record; the running app is still the normal Windows install."
     ],
     "architecture": {
         "64bit": {
@@ -22,11 +22,5 @@
     },
     "uninstaller": {
         "script": "$pf = [Environment]::GetFolderPath('ProgramFiles'); $d = Join-Path $pf 'KoordASIO'; $u = Get-ChildItem $d -Filter 'unins*.exe' -ErrorAction SilentlyContinue | Select-Object -First 1; if ($null -ne $u) { Start-Process $u.FullName -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait } else { warn 'KoordASIO uninstaller not found; remove manually from Program Files if needed.' }"
-    },
-    "bin": [
-        [
-            "C:\\Program Files\\KoordASIO\\KoordASIOControl.exe",
-            "KoordASIOControl"
-        ]
-    ]
+    }
 }

@@ -4,8 +4,8 @@
     "homepage": "https://www.tobias-erichsen.de/software/loopmidi.html",
     "license": "Freeware",
     "notes": [
-        "Package name ends with -np (non-portable): Scoop downloads the zip and runs the vendor setup. The driver installs under %ProgramFiles(x86)%\\Tobias Erichsen\\loopMIDI, not under the Scoop app directory.",
-        "Prefer installing from an elevated PowerShell if UAC/setup fails. Uninstall runs the Inno uninstaller in that folder."
+        "Package name ends with -np (non-portable): Scoop only downloads the zip and runs the vendor setup. The driver, files, and shortcuts are entirely the vendor’s; there are no Scoop shims.",
+        "Prefer an elevated PowerShell if UAC/setup fails. `scoop uninstall` runs the vendor uninstaller under %ProgramFiles(x86)%\\Tobias Erichsen\\loopMIDI so Scoop can drop its install record."
     ],
     "architecture": {
         "64bit": {
@@ -23,11 +23,5 @@
     },
     "uninstaller": {
         "script": "$pf86 = ${env:ProgramFiles(x86)}; $d = Join-Path $pf86 'Tobias Erichsen\\loopMIDI'; $u = Get-ChildItem $d -Filter 'unins*.exe' -ErrorAction SilentlyContinue | Select-Object -First 1; if ($null -ne $u) { Start-Process $u.FullName -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait } else { warn 'loopMIDI uninstaller not found; use Windows Settings or the Start Menu shortcut if present.' }"
-    },
-    "bin": [
-        [
-            "C:\\Program Files (x86)\\Tobias Erichsen\\loopMIDI\\loopMIDI.exe",
-            "loopMIDI"
-        ]
-    ]
+    }
 }
