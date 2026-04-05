@@ -1,11 +1,11 @@
 {
     "version": "2.1.0",
-    "description": "Universal ASIO driver (KoordASIO). Installs to Program Files and registers the driver system-wide.",
+    "description": "Universal ASIO driver (KoordASIO). Non-portable (-np): runs the vendor installer; installs under Program Files system-wide.",
     "homepage": "https://github.com/kormix-io/KoordASIO",
     "license": "MIT",
     "notes": [
-        "This manifest only automates the official installer. The ASIO driver and KoordASIO Control install under %ProgramFiles%\\KoordASIO (not under the Scoop app directory).",
-        "UAC/admin may be required. Uninstall removes the driver via the vendor uninstaller under that folder."
+        "Package name ends with -np (non-portable): Scoop only automates the official installer. Files live under %ProgramFiles%\\KoordASIO, not under the Scoop app directory.",
+        "Prefer installing from an elevated PowerShell if UAC/setup fails. Uninstall removes the driver via the vendor uninstaller in that folder."
     ],
     "architecture": {
         "64bit": {
@@ -26,7 +26,7 @@
     "bin": [
         [
             "C:\\Program Files\\KoordASIO\\KoordASIOControl.exe",
-            "koordasio-control"
+            "KoordASIOControl"
         ]
     ]
 }

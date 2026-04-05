@@ -6,6 +6,7 @@ This file is for automated assistants (and humans) who add or update Scoop manif
 
 - **Type:** Personal public Scoop bucket.
 - **Manifests:** One JSON file per app under [`bucket/`](bucket/). The file basename (without `.json`) is the **package name** Scoop uses (`scoop install <bucket>/<basename>`).
+- **`-np` suffix:** Use a basename ending in `-np` when the manifest runs a **system / non-portable** installer (Program Files, drivers, regsvr). That makes `scoop install` self-explanatory. Keep **`bin` / `shortcuts` labels** close to the vendor product (executable name or friendly title), not the `-np` package name. Scoop’s built-in `shortcuts` field is resolved under `$dir`, so `-np` apps that install only under Program Files usually rely on **shims with absolute `bin` paths** (and/or shortcuts the vendor installer creates).
 - **Template:** Copy [`bucket/app-name.json.template`](bucket/app-name.json.template) to `bucket/<app>.json`, then fill in real values and **delete** keys you do not need (empty strings and unused blocks break or clutter manifests).
 
 ## Authoritative documentation

@@ -15,6 +15,10 @@ scoop install zunaid-scoop-bucket/<manifest-name>
 
 Replace `<manifest-name>` with the JSON filename in [`bucket/`](bucket/) without the `.json` extension.
 
+### Non-portable packages (`-np`)
+
+Manifests whose names end with **`-np`** run a **vendor installer** (drivers, Program Files layouts, UAC). The **`-np` suffix** is only the Scoop package name (for example `scoop install …/loopmidi-np`). **Shims and Start Menu entries** from those manifests still use **vendor-style names** (for example `loopMIDI`, `KoordASIOControl`) where possible. Prefer an **elevated** shell when the installer needs admin.
+
 ## Contributing / maintenance
 
 - **AI assistants:** see [AGENTS.md](AGENTS.md) for how this repo is structured and how to add or change manifests safely.

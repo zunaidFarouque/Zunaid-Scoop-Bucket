@@ -1,11 +1,11 @@
 {
     "version": "1.0.16.27",
-    "description": "Virtual loopback MIDI port (Tobias Erichsen loopMIDI). Installs the driver and app to Program Files (x86).",
+    "description": "Virtual loopback MIDI port (Tobias Erichsen loopMIDI). Non-portable (-np): runs the vendor installer; driver under Program Files (x86).",
     "homepage": "https://www.tobias-erichsen.de/software/loopmidi.html",
     "license": "Freeware",
     "notes": [
-        "Scoop downloads the zip and runs the vendor setup. The virtual MIDI driver installs system-wide under %ProgramFiles(x86)%\\Tobias Erichsen\\loopMIDI — not under the Scoop app directory.",
-        "UAC/admin is typical for MIDI driver installation. Uninstall runs the Inno uninstaller in that folder."
+        "Package name ends with -np (non-portable): Scoop downloads the zip and runs the vendor setup. The driver installs under %ProgramFiles(x86)%\\Tobias Erichsen\\loopMIDI, not under the Scoop app directory.",
+        "Prefer installing from an elevated PowerShell if UAC/setup fails. Uninstall runs the Inno uninstaller in that folder."
     ],
     "architecture": {
         "64bit": {
@@ -27,7 +27,7 @@
     "bin": [
         [
             "C:\\Program Files (x86)\\Tobias Erichsen\\loopMIDI\\loopMIDI.exe",
-            "loopmidi"
+            "loopMIDI"
         ]
     ]
 }
