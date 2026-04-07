@@ -19,6 +19,12 @@
             "fps-overlay"
         ]
     ],
+    "shortcuts": [
+        [
+            "overlay/overlay.exe",
+            "fps-overlay"
+        ]
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/aneeskhan47/fps-overlay/releases/latest",
         "jsonpath": "$.tag_name",
