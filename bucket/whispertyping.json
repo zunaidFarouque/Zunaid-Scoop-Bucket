@@ -1,0 +1,23 @@
+{
+    "version": "4.5.0",
+    "description": "Voice dictation software for Windows (WhisperTyping).",
+    "homepage": "https://whispertyping.com/",
+    "license": "Proprietary",
+    "notes": [
+        "Upstream currently ships installer/ClickOnce distribution; no official portable ZIP payload is published.",
+        "This manifest runs the official installer silently and keeps Scoop as the package/update entry point.",
+        "If UAC prompts appear, run from an elevated PowerShell."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://download.whispertyping.com/wt/whispertypinginstaller.exe",
+            "hash": "b9482657fc4585c5fbf1358b5b64e4f4f04984bd2175aae480aec5772e48cb36"
+        }
+    },
+    "installer": {
+        "script": "Start-Process -FilePath (Join-Path $dir 'whispertypinginstaller.exe') -ArgumentList '/exenoui','/msi\"/qn /norestart\"' -Wait"
+    },
+    "uninstaller": {
+        "script": "$keys = @('HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKLM:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'); $app = Get-ItemProperty -Path $keys -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like 'WhisperTyping*' } | Select-Object -First 1; if ($null -eq $app) { warn 'WhisperTyping uninstall entry not found. Remove it from Windows Settings > Apps if needed.'; return }; if ($app.QuietUninstallString) { Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', $app.QuietUninstallString -Wait; return }; if ($app.UninstallString) { Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', ($app.UninstallString + ' /quiet /qn /norestart') -Wait; return }; warn 'No uninstall command found for WhisperTyping.'"
+    }
+}
