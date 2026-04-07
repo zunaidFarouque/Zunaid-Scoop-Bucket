@@ -15,7 +15,7 @@
         }
     },
     "installer": {
-        "script": "Start-Process -FilePath (Join-Path $dir 'whispertypinginstaller.exe') -ArgumentList '/exenoui /msi\"/qn /norestart\"' -Wait"
+        "script": "Start-Process -FilePath (Join-Path $dir 'whispertypinginstaller.exe') -ArgumentList '/exenoui' -Wait"
     },
     "uninstaller": {
         "script": "$keys = @('HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKLM:\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*','HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*'); $app = Get-ItemProperty -Path $keys -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like 'WhisperTyping*' } | Select-Object -First 1; if ($null -eq $app) { warn 'WhisperTyping uninstall entry not found. Remove it from Windows Settings > Apps if needed.'; return }; if ($app.QuietUninstallString) { Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', $app.QuietUninstallString -Wait; return }; if ($app.UninstallString) { Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', ($app.UninstallString + ' /quiet /qn /norestart') -Wait; return }; warn 'No uninstall command found for WhisperTyping.'"
