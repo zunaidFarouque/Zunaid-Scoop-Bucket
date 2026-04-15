@@ -1,0 +1,85 @@
+{
+    "version": "1.5.3",
+    "description": "A beautiful, non-destructive, and GPU-accelerated RAW image editor built with performance in mind.",
+    "homepage": "https://github.com/CyberTimon/RapidRAW",
+    "license": "AGPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/CyberTimon/RapidRAW/releases/download/v1.5.3/01_RapidRAW_v1.5.3_windows_x64.exe#/dl.7z",
+            "hash": "370616b83b78ca712e6ece88a0d02019565ed8064ca23ec6e497ebc0c706a6e8"
+        }
+    },
+    "shortcuts": [
+        [
+            "RapidRAW.exe",
+            "RapidRAW"
+        ]
+    ],
+    "pre_install": [
+        "$links = @(@(\"$env:APPDATA\\com.rapidraw.app\", \"$persist_dir\\appdata\\com.rapidraw.app\"), @(\"$env:LOCALAPPDATA\\com.rapidraw.app\", \"$persist_dir\\localappdata\\com.rapidraw.app\"))",
+        "foreach ($pair in $links) {",
+        "    $linkPath = $pair[0]",
+        "    $storePath = $pair[1]",
+        "    New-Item -ItemType Directory -Path $storePath -Force | Out-Null",
+        "    if (Test-Path -LiteralPath $linkPath) {",
+        "        $item = Get-Item -LiteralPath $linkPath -Force",
+        "        if ($item.Attributes -band [System.IO.FileAttributes]::ReparsePoint) {",
+        "            $targetPath = @($item.Target)[0]",
+        "            if ($targetPath) {",
+        "                try {",
+        "                    $resolvedTarget = (Resolve-Path -LiteralPath $targetPath -ErrorAction Stop).Path",
+        "                    $resolvedStore = (Resolve-Path -LiteralPath $storePath -ErrorAction Stop).Path",
+        "                    if ($resolvedTarget -ne $resolvedStore) {",
+        "                        throw \"Refusing to overwrite existing link at $linkPath because it points to $resolvedTarget\"",
+        "                    }",
+        "                } catch {",
+        "                    throw \"Refusing to overwrite existing link at $linkPath\"",
+        "                }",
+        "            }",
+        "            continue",
+        "        }",
+        "        Get-ChildItem -LiteralPath $linkPath -Force -ErrorAction SilentlyContinue | ForEach-Object {",
+        "            Move-Item -LiteralPath $_.FullName -Destination $storePath -Force -ErrorAction SilentlyContinue",
+        "        }",
+        "        Remove-Item -LiteralPath $linkPath -Recurse -Force",
+        "    }",
+        "    New-Item -ItemType Junction -Path $linkPath -Value $storePath | Out-Null",
+        "}",
+        "Remove-Item \"$dir\\uninstall*\", \"$dir\\`$*\" -Force -Recurse"
+    ],
+    "pre_uninstall": [
+        "$links = @(@(\"$env:APPDATA\\com.rapidraw.app\", \"$persist_dir\\appdata\\com.rapidraw.app\"), @(\"$env:LOCALAPPDATA\\com.rapidraw.app\", \"$persist_dir\\localappdata\\com.rapidraw.app\"))",
+        "foreach ($pair in $links) {",
+        "    $linkPath = $pair[0]",
+        "    $storePath = $pair[1]",
+        "    if (!(Test-Path -LiteralPath $linkPath)) { continue }",
+        "    $item = Get-Item -LiteralPath $linkPath -Force",
+        "    if (!($item.Attributes -band [System.IO.FileAttributes]::ReparsePoint)) { continue }",
+        "    $targetPath = @($item.Target)[0]",
+        "    if (!$targetPath) { continue }",
+        "    try {",
+        "        $resolvedTarget = (Resolve-Path -LiteralPath $targetPath -ErrorAction Stop).Path",
+        "        $resolvedStore = (Resolve-Path -LiteralPath $storePath -ErrorAction Stop).Path",
+        "        if ($resolvedTarget -eq $resolvedStore) {",
+        "            Remove-Item -LiteralPath $linkPath -Recurse -Force -ErrorAction SilentlyContinue",
+        "        }",
+        "    } catch {",
+        "        continue",
+        "    }",
+        "}"
+    ],
+    "notes": [
+        "RapidRAW is not portable. This manifest creates app-specific junctions only for:",
+        "  %APPDATA%\\com.rapidraw.app -> $persist_dir\\appdata\\com.rapidraw.app",
+        "  %LOCALAPPDATA%\\com.rapidraw.app -> $persist_dir\\localappdata\\com.rapidraw.app",
+        "The uninstall script removes only these two links if they point to this app's persist directory."
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/CyberTimon/RapidRAW/releases/download/v$version/01_RapidRAW_v$version_windows_x64.exe#/dl.7z"
+            }
+        }
+    }
+}
