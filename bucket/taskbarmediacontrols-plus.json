@@ -1,12 +1,12 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Taskbar media controls for Windows 10 and 11 with plus fork improvements.",
     "homepage": "https://github.com/zunaidFarouque/TaskbarMediaControls-Plus",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zunaidFarouque/TaskbarMediaControls-Plus/releases/download/v1.0.1/TaskbarMediaControls-Plus-v1.0.1-portable.zip",
-            "hash": "fb80b3273b5e7e86a43b306a8d08298a89b7330af3cc17bbe975948f67251bca"
+            "url": "https://github.com/zunaidFarouque/TaskbarMediaControls-Plus/releases/download/v1.0.2/TaskbarMediaControls-Plus-v1.0.2-portable.zip",
+            "hash": "09e4fd07376ba0d5957b5bf00f87c4def69bb17fd894e388a12228bea73a11b5"
         }
     },
     "bin": [
