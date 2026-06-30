@@ -15,6 +15,14 @@ scoop install zunaid-scoop-bucket/<manifest-name>
 
 Replace `<manifest-name>` with the JSON filename in [`bucket/`](bucket/) without the `.json` extension.
 
+### Available packages
+
+- **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR))
+
+  ```pwsh
+  scoop install zunaid-scoop-bucket/visioflow
+  ```
+
 ### Non-portable packages (`-np`)
 
 Manifests whose names end with **`-np`** only **automate** the vendor setup: download, hash check, silent install. The app then lives entirely under **Program Files** (or equivalent) with **vendor shortcuts**—typically **no `bin` shims**, so Scoop does not pretend to own the executable. Scoop still records the install and can run **`scoop uninstall`** to invoke the vendor uninstaller and clear that record. Prefer an **elevated** shell when the installer needs admin.
