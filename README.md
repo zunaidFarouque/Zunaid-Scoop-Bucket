@@ -1,6 +1,6 @@
 # Zunaid-Scoop-Bucket
 
-[![CI](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml)
+[![CI](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml) [![Sync visioflow](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml)
 
 Personal [Scoop](https://scoop.sh) bucket: custom app manifests that are not (or not yet) in the default buckets.
 
@@ -17,7 +17,7 @@ Replace `<manifest-name>` with the JSON filename in [`bucket/`](bucket/) without
 
 ### Available packages
 
-- **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR))
+- **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-visioflow.yml) automatically.
 
   ```pwsh
   scoop install zunaid-scoop-bucket/visioflow
