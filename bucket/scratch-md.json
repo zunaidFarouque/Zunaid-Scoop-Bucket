@@ -1,5 +1,5 @@
 {
-    "version": "0.10.0",
+    "version": "1.0.0",
     "description": "Minimalist, offline-first markdown note-taking app (Tauri).",
     "homepage": "https://www.ericli.io/scratch",
     "license": "MIT",
@@ -13,8 +13,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/erictli/scratch/releases/download/v0.10.0/Scratch_0.10.0_x64-setup.exe#/dl.7z",
-            "hash": "9c1d7be9e7f7d9091a8e58a56aeee7d57cf8f344166e9cbed593e281e05674ed"
+            "url": "https://github.com/erictli/scratch/releases/download/v1.0.0/Scratch_1.0.0_x64-setup.exe#/dl.7z",
+            "hash": "d240c47f4215e1bab4283c0446402e703776f86ad5d904baab2964a1aee4c968"
         }
     },
     "pre_install": [
