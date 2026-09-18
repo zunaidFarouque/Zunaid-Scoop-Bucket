@@ -45,6 +45,13 @@ Fix any **Pester** / manifest lint failures before pushing.
 - **Git remote:** `https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket.git` — if the GitHub owner or repo name changes, update [`README.md`](README.md) badges and install commands, and [`bin/auto-pr.ps1`](bin/auto-pr.ps1) (`$upstream = "Owner/Repo:main"`).
 - **Bucket short name in docs:** `zunaid-scoop-bucket` (the name users pass to `scoop bucket add`). If you rename it, update **README.md** and examples here.
 
+### ProcessSentinel (`processsentinel`)
+
+- **Canonical manifest:** [ProcessSentinel `processsentinel.json`](https://github.com/zunaidFarouque/ProcessSentinel/blob/main/processsentinel.json) — edit there when releasing; do not hand-edit version/hash in this bucket unless syncing.
+- **Bucket copy:** [`bucket/processsentinel.json`](bucket/processsentinel.json) is updated by [`.github/workflows/sync-processsentinel.yml`](.github/workflows/sync-processsentinel.yml) (daily schedule, `workflow_dispatch`, or `repository_dispatch` event `sync-processsentinel-manifest`).
+- **Local sync:** `.\bin\sync-processsentinel.ps1` or trigger CI with `.\scripts\force-sync-processsentinel.ps1`.
+- **Excavator** may still see `checkver` on the synced file, but daily sync is the intended update path; excavator usually finds nothing new if sync already ran.
+
 ### VisioFlow (`visioflow`)
 
 - **Canonical manifest:** [VisioFlow-QR `scripts/packaging/scoop/visioflow.json`](https://github.com/zunaidFarouque/VisioFlow-QR/blob/main/scripts/packaging/scoop/visioflow.json) — edit there when releasing; do not hand-edit version/hash in this bucket unless syncing.

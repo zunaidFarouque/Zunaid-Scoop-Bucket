@@ -1,6 +1,6 @@
 # Zunaid-Scoop-Bucket
 
-[![CI](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml) [![Sync visioflow](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml)
+[![CI](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/excavator.yml) [![Sync visioflow](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-visioflow.yml) [![Sync processsentinel](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-processsentinel.yml/badge.svg)](https://github.com/zunaidFarouque/Zunaid-Scoop-Bucket/actions/workflows/sync-processsentinel.yml)
 
 Personal [Scoop](https://scoop.sh) bucket: custom app manifests that are not (or not yet) in the default buckets.
 
@@ -16,6 +16,12 @@ scoop install zunaid-scoop-bucket/<manifest-name>
 Replace `<manifest-name>` with the JSON filename in [`bucket/`](bucket/) without the `.json` extension.
 
 ### Available packages
+
+- **processsentinel** — Modular rule-based Windows watchdog engine and modern desktop dashboard ([ProcessSentinel](https://github.com/zunaidFarouque/ProcessSentinel)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-processsentinel.yml) automatically.
+
+  ```pwsh
+  scoop install zunaid-scoop-bucket/processsentinel
+  ```
 
 - **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-visioflow.yml) automatically.
 
