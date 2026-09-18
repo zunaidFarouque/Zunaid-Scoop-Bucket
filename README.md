@@ -17,17 +17,42 @@ Replace `<manifest-name>` with the JSON filename in [`bucket/`](bucket/) without
 
 ### Available packages
 
-- **processsentinel** — Modular rule-based Windows watchdog engine and modern desktop dashboard ([ProcessSentinel](https://github.com/zunaidFarouque/ProcessSentinel)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-processsentinel.yml) automatically.
+#### Featured projects (created / maintained by me)
 
-  ```pwsh
-  scoop install zunaid-scoop-bucket/processsentinel
-  ```
+1. **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-visioflow.yml) automatically.
 
-- **visioflow** — Visual payload router for QR capture and automation ([VisioFlow-QR](https://github.com/zunaidFarouque/VisioFlow-QR)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-visioflow.yml) automatically.
+   ```pwsh
+   scoop install zunaid-scoop-bucket/visioflow
+   ```
 
-  ```pwsh
-  scoop install zunaid-scoop-bucket/visioflow
-  ```
+2. **processsentinel** — Modular rule-based Windows watchdog engine and modern desktop dashboard ([ProcessSentinel](https://github.com/zunaidFarouque/ProcessSentinel)). The Scoop manifest is maintained in that repo and [synced into this bucket](.github/workflows/sync-processsentinel.yml) automatically.
+
+   ```pwsh
+   scoop install zunaid-scoop-bucket/processsentinel
+   ```
+
+3. **taskbarmediacontrols-plus** — Taskbar media controls for Windows 10 and 11 with plus fork improvements ([TaskbarMediaControls-Plus](https://github.com/zunaidFarouque/TaskbarMediaControls-Plus)).
+
+   ```pwsh
+   scoop install zunaid-scoop-bucket/taskbarmediacontrols-plus
+   ```
+
+#### Other packages
+
+There are also several other useful packages maintained in this bucket that were not originally created by me:
+
+- **calcpad-ce** — Open-source engineering worksheet editor with real-time rendered math output ([CalcpadCE](https://github.com/imartincei/CalcpadCE)).
+- **chataigne** — Modular OSC / MIDI / DMX control software for interactive and live projects ([Chataigne](https://benjamin.kuperberg.fr/chataigne/en)).
+- **everyone-piano** — Virtual piano keyboard software ([Everyone Piano](https://www.everyonepiano.com/)).
+- **flexasio-gui** — Configuration GUI for FlexASIO audio driver ([FlexASIO GUI](https://github.com/flipswitchingmonkey/FlexASIO_GUI)).
+- **fps-overlay** — Lightweight, no-bloat FPS overlay for Windows games ([fps-overlay](https://github.com/aneeskhan47/fps-overlay)).
+- **harmony-music** — Cross-platform music streaming app for YouTube Music and local audio ([Harmony Music](https://github.com/anandnet/Harmony-Music)).
+- **hotkey-screener** — System-wide hotkey enumeration and conflict detection tool ([HotkeyScreener](https://github.com/bozbez/HotkeyScreener)).
+- **koord-asio-np** — Universal multi-client ASIO driver installer (`-np`) ([KoordASIO](https://github.com/koord-live/KoordASIO)).
+- **loopmidi-np** — Virtual loopback MIDI cable driver installer (`-np`) ([loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html)).
+- **protokol** — MIDI, OSC, and Art-Net monitor and diagnostic tool ([Protokol](https://hexler.net/protokol)).
+- **rapidraw** — Fast, non-destructive, GPU-accelerated RAW image editor ([RapidRAW](https://github.com/RapidRAW/RapidRAW)).
+- **scratch-md** — Minimalist, offline-first Markdown note-taking app ([scratch-md](https://github.com/marchellodev/scratch-md)).
 
 ### Non-portable packages (`-np`)
 
