@@ -59,6 +59,14 @@ Fix any **Pester** / manifest lint failures before pushing.
 - **Local sync:** `.\bin\sync-visioflow.ps1` or trigger CI with `.\scripts\force-sync-visioflow.ps1`.
 - **Excavator** may still see `checkver` on the synced file, but daily sync is the intended update path; excavator usually finds nothing new if sync already ran.
 
+### Integrating New Author Projects (`templates/scoop-release-helper/`)
+
+For new software projects created by the maintainer:
+- Use the **ProcessSentinel automated release and sync pattern** located in [`templates/scoop-release-helper/`](templates/scoop-release-helper/).
+- In the project repo: Provide [`templates/scoop-release-helper/PROMPT_FOR_AI.md`](templates/scoop-release-helper/PROMPT_FOR_AI.md) to an AI assistant to generate the in-repo manifest, `scripts/release.ps1`, and release safety guidelines.
+- In this bucket repo: Add `.github/workflows/sync-<app>.yml` and `bin/sync-<app>.ps1` (from the templates) and add the initial manifest copy to `bucket/<app>.json`.
+
+
 ## Pull request hygiene
 
 - Prefer **one application (or one logical change) per PR**.

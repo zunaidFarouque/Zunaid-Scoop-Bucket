@@ -1,0 +1,34 @@
+{
+    "version": "1.0.0",
+    "description": "Short description of the application.",
+    "homepage": "https://github.com/zunaidFarouque/<RepoName>",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/zunaidFarouque/<RepoName>/releases/download/v1.0.0/<AppName>-v1.0.0-windows-x64.zip",
+            "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+    },
+    "bin": [
+        [
+            "<AppName>.exe",
+            "<app-name>"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "<AppName>.exe",
+            "<AppName>"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/zunaidFarouque/<RepoName>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/zunaidFarouque/<RepoName>/releases/download/v$version/<AppName>-v$version-windows-x64.zip"
+            }
+        }
+    }
+}
