@@ -1,12 +1,12 @@
 {
-    "version": "0.1.6",
+    "version": "0.2.0",
     "description": "Visual payload router for QR capture and automation",
     "homepage": "https://github.com/zunaidFarouque/VisioFlow-QR",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zunaidFarouque/VisioFlow-QR/releases/download/v0.1.6/visioflow-win-x64.zip",
-            "hash": "068ee04dac3c9493b9bfed4bf088fa4c044d026c5ae9fdc3653a33d0706cfd45",
+            "url": "https://github.com/zunaidFarouque/VisioFlow-QR/releases/download/v0.2.0/visioflow-win-x64.zip",
+            "hash": "49c8ece521bec820ac247550a555d28217b5b3843614be868b6923af5ef2fb97",
             "extract_dir": "visioflow-win-x64"
         }
     },
