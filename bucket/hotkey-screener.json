@@ -1,5 +1,5 @@
 {
-    "version": "1.1",
+    "version": "1.2",
     "description": "Free tool that enumerates system-wide hotkeys (RegisterHotKey) and detects which application responds to each one.",
     "homepage": "https://www.ntwind.com/freeware/hotkey-screener.html",
     "license": {
@@ -13,7 +13,7 @@
     "architecture": {
         "64bit": {
             "url": "https://www.ntwind.com/download/HotkeyScreener.zip",
-            "hash": "5a4e69d6698b9187be516be589712f1baede5c3f5fee1b4b6cf01de6f786cce0",
+            "hash": "ee7302a37c31cfd1ab10642597e3ab5103f665e829e668d303b171933db4c2ea",
             "bin": [
                 [
                     "hkscr64.exe",
@@ -29,7 +29,7 @@
         },
         "32bit": {
             "url": "https://www.ntwind.com/download/HotkeyScreener.zip",
-            "hash": "5a4e69d6698b9187be516be589712f1baede5c3f5fee1b4b6cf01de6f786cce0",
+            "hash": "ee7302a37c31cfd1ab10642597e3ab5103f665e829e668d303b171933db4c2ea",
             "bin": [
                 [
                     "hkscr.exe",
